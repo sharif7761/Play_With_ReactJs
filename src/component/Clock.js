@@ -17,9 +17,9 @@ class Clock extends Component {
         clearInterval(this.clockTimer)
     }
 
-    clickHandler = () => {
+    clickHandler = (locale) => {
         this.setState({
-            locale: 'en-US'
+            locale: locale
         })
     }
 
@@ -36,7 +36,7 @@ class Clock extends Component {
                 <h1>
                     { this.state.date.toLocaleTimeString(this.state.locale) }
                 </h1>
-                <button type='button' onClick={this.clickHandler}>Click</button>
+                <button type='button' onClick={() => this.clickHandler('en-US')}>Click</button>
             </>
         );
     }
