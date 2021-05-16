@@ -9,13 +9,9 @@ class Form extends Component {
     }
 
     handleChange = (e) => {
-        if(e.target.type === 'text'){
+        if(e.target.type === 'text' || e.target.type === 'textarea'){
             this.setState({
-                title: e.target.value,
-            })
-        } else if(e.target.type === 'textarea'){
-            this.setState({
-                text: e.target.value,
+                [e.target.name] : e.target.value,
             })
         } else if(e.target.type === 'select-one'){
             this.setState({
@@ -31,12 +27,19 @@ class Form extends Component {
 
     }
 
+    submitHandler = (e) => {
+        const { title, text, library, isAwesome } = this.state
+        e.preventDefault()
+        console.log(this.state)
+    }
+
     render() {
         const { title, text, library, isAwesome } = this.state
         return (
             <div>
-                <form>
+                <form onSubmit={this.submitHandler}>
                     <input type='text'
+                           name='title'
                            placeholder='Enter title'
                            value={title}
                            onChange={this.handleChange}
@@ -58,6 +61,7 @@ class Form extends Component {
                            checked={isAwesome}
                            onChange={this.handleChange}
                     />Awesome?
+                    <input type='submit' value='Submit'/>
                 </form>
             </div>
         );
