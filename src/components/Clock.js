@@ -38,7 +38,7 @@ class Clock extends Component {
                 <h1>
                     { this.state.date.toLocaleTimeString(this.state.locale) }
                 </h1>
-                <Button change={() => this.clickHandler( 'en-US')} />
+                <Button change={this.clickHandler} locale='en-US' />
             </>
         );
     }
