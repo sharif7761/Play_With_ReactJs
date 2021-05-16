@@ -45,6 +45,8 @@ class Form extends Component {
                            onChange={this.handleChange}
                     />
                     <br /><br />
+                    <input type='text' name='null' value={null}/>
+                    <br /><br />
                     <textarea name='text'
                               value={text}
                               onChange={this.handleChange}>
