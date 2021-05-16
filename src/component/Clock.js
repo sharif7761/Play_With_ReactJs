@@ -5,7 +5,8 @@ class Clock extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            date: new Date()
+            date: new Date(),
+            locale: 'bn-BD'
         }
     }
 
@@ -14,6 +15,12 @@ class Clock extends Component {
         }
     componentWillUnmount() {
         clearInterval(this.clockTimer)
+    }
+
+    clickHandler = () => {
+        this.setState({
+            locale: 'en-US'
+        })
     }
 
     thick() {
@@ -25,9 +32,12 @@ class Clock extends Component {
 
     render() {
         return (
-            <h1>
-                { this.state.date.toLocaleTimeString(this.props.locale) }
-            </h1>
+            <>
+                <h1>
+                    { this.state.date.toLocaleTimeString(this.state.locale) }
+                </h1>
+                <button type='button' onClick={this.clickHandler}>Click</button>
+            </>
         );
     }
 }
