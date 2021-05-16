@@ -32,7 +32,7 @@ class Clock extends Component {
 
 
     render() {
-        console.log('clock component')
+        // console.log('clock component')
         return (
             <>
                 <h1>
