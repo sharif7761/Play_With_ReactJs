@@ -4,6 +4,8 @@ import Clock from "./components/Clock";
 import Form from "./components/Form";
 import Calculator from "./components/Calculator";
 import Text from "./components/inheritance/Text";
+import CompEmoji from "./components/composition/CompEmoji";
+import CompText from "./components/composition/CompText";
 
 function App() {
     // console.log('app component')
@@ -15,6 +17,9 @@ function App() {
       <Calculator />
         <h1>------------Composition vs Inheritance------------</h1>
         <Text />
+        <CompEmoji>
+            {({addEmoji}) => <CompText addEmoji={addEmoji} />}
+        </CompEmoji>
     </div>
   );
 }
