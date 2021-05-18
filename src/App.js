@@ -3,6 +3,7 @@ import './App.css';
 import Clock from "./components/Clock";
 import Form from "./components/Form";
 import Calculator from "./components/Calculator";
+import Text from "./components/inheritance/Text";
 
 function App() {
     // console.log('app component')
@@ -12,6 +13,8 @@ function App() {
       <Form />
       <h1>------------Lifting State Up------------</h1>
       <Calculator />
+        <h1>------------Composition vs Inheritance------------</h1>
+        <Text />
     </div>
   );
 }
