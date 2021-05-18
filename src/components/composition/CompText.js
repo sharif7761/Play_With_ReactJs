@@ -1,11 +1,17 @@
 import React from 'react';
 
-const CompText = ({ addEmoji }) => {
-    const text = 'I am Js Programming Language Composition'
+const CompText = ({ addEmoji, addBracket }) => {
+    let text = 'I am Js Programming Language Composition'
+    if(addEmoji) {
+        text = addEmoji(text, ':heart')
+    }
+    if(addBracket) {
+        text = addBracket(text)
+    }
 
     return (
         <div>
-            { addEmoji ? addEmoji(text, ':heart') : text }
+            { text }
         </div>
     );
 };

@@ -6,6 +6,7 @@ import Calculator from "./components/Calculator";
 import Text from "./components/inheritance/Text";
 import CompEmoji from "./components/composition/CompEmoji";
 import CompText from "./components/composition/CompText";
+import Bracket from "./components/composition/Bracket";
 
 function App() {
     // console.log('app component')
@@ -19,6 +20,16 @@ function App() {
         <Text />
         <CompEmoji>
             {({addEmoji}) => <CompText addEmoji={addEmoji} />}
+        </CompEmoji>
+        <p>Nested composition</p>
+        <CompEmoji>
+            {({addEmoji}) => (
+                <Bracket>
+                    {({addBracket}) => <CompText addEmoji={addEmoji}
+                                                addBracket={addBracket} />
+                    }
+                </Bracket>
+            )}
         </CompEmoji>
     </div>
   );
