@@ -10,6 +10,8 @@ import ClickCounter from "./components/HOC/ClickCounter";
 import HoverCounter from "./components/HOC/HoverCounter";
 import ClickCounterHoc from "./components/HOC/ClickCounterHoc";
 import HoverCounterHoc from "./components/HOC/HoverCounterHoc";
+import ClickCounterRP from "./components/render_props/ClickCounterRP";
+import HoverCounterRP from "./components/render_props/HoverCounterRP";
 
 function App() {
     // console.log('app component')
@@ -41,6 +43,9 @@ function App() {
             <h3>Using HOC</h3>
             <ClickCounterHoc />
             <HoverCounterHoc />
+            <h1>------------Render Props------------</h1>
+            <ClickCounterRP />
+            <HoverCounterRP />
 
 
             <br/> <br/> <br/>
