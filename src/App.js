@@ -8,6 +8,8 @@ import CompText from "./components/composition/CompText";
 import Bracket from "./components/composition/Bracket";
 import ClickCounter from "./components/HOC/ClickCounter";
 import HoverCounter from "./components/HOC/HoverCounter";
+import ClickCounterHoc from "./components/HOC/ClickCounterHoc";
+import HoverCounterHoc from "./components/HOC/HoverCounterHoc";
 
 function App() {
     // console.log('app component')
@@ -33,8 +35,12 @@ function App() {
                 )}
             </CompEmoji>
             <h1>------------Higher ORder Component------------</h1>
+             <h3>Normal compnent</h3>
             <ClickCounter />
             <HoverCounter />
+            <h3>Using HOC</h3>
+            <ClickCounterHoc />
+            <HoverCounterHoc />
 
 
             <br/> <br/> <br/>
