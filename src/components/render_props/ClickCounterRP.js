@@ -1,15 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class ClickCounterRP extends Component {
+const ClickCounterRp = ({ count, incrementCount }) => {
+    return (
+        <div>
+            <button onClick={incrementCount}>Clicked { count } times</button>
+        </div>
+    );
+};
 
-    render() {
-        const { count, incrementCount } = this.props
-        return (
-            <div>
-                <button onClick={incrementCount}>Clicked { count } times</button>
-            </div>
-        );
-    }
-}
-
-export default ClickCounterRP;
+export default ClickCounterRp;

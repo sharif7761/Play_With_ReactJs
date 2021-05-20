@@ -1,15 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class HoverCounterRP extends Component {
+const HoverCounterRp = ({ count, incrementCount }) => {
+    return (
+        <div>
+            <h1 onMouseOver={incrementCount}>Hovered { count } times</h1>
+        </div>
+    );
+};
 
-    render() {
-        const { count, incrementCount } = this.props
-        return (
-            <div>
-                <h1 onMouseOver={incrementCount}>Hovered { count } times</h1>
-            </div>
-        );
-    }
-}
-
-export default HoverCounterRP;
+export default HoverCounterRp;
