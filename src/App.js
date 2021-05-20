@@ -12,6 +12,7 @@ import ClickCounterHoc from "./components/HOC/ClickCounterHoc";
 import HoverCounterHoc from "./components/HOC/HoverCounterHoc";
 import ClickCounterRP from "./components/render_props/ClickCounterRP";
 import HoverCounterRP from "./components/render_props/HoverCounterRP";
+import Counter from "./components/render_props/Counter";
 
 function App() {
     // console.log('app component')
@@ -44,8 +45,14 @@ function App() {
             <ClickCounterHoc />
             <HoverCounterHoc />
             <h1>------------Render Props------------</h1>
-            <ClickCounterRP />
-            <HoverCounterRP />
+            <Counter render={(count, incrementCount) => (
+                <ClickCounterRP count={count} incrementCount={incrementCount} />
+                )}
+            />
+                <Counter render={(count, incrementCount) => (
+                    <HoverCounterRP count={count} incrementCount={incrementCount} />
+                )}
+                />
 
 
             <br/> <br/> <br/>
